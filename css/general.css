@@ -18,15 +18,19 @@ p Default: 1.6
 
 --- 02 COLORS
 - Primary: #e67e22;
-- Tints: #fdf2e9
+- Tints: 
+  #fdf2e9
   #fae5d3
+  #eb984e
 
-- Shades: #cf711f
+- Shades: #cf711f 
+#45260a;
 - Accents: 
 - Greys: #555;
 #333
 #6f6f6f (lightest grey allowed #fdf2e9);
 --- 05 SHADOWS
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.1);
 
 --- 06 BORDER-RADIUS
 
@@ -70,6 +74,10 @@ body {
   display: grid;
   row-gap: 9.6rem;
   column-gap: 6.4rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
@@ -124,16 +132,20 @@ body {
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
-  background-color: #e67e22;
-  color: #fff;
+  display: inline-block;
+
   font-size: 2rem;
   font-weight: 600;
+
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
-  display: inline-block;
   text-decoration: none;
+
+  border: none;
+  cursor: pointer;
 
   /* Put transition on original "state" */
   transition: all 300ms;
@@ -166,6 +178,18 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: white;
+  color: #555;
+}
+
 .link:link,
 .link:visited {
   display: inline-block;
@@ -182,6 +206,33 @@ body {
   border-bottom: 1px solid transparent;
 }
 
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+    outline-offset: 8px; */
+  box-shadow: 0 0 0 3px rgba(230, 125, 34, 0.5);
+}
 /* Helper classes */
 .margin-right-sm {
   margin-right: 1.6rem !important;
